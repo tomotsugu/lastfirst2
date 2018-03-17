@@ -1,0 +1,32 @@
+<%= form_with(model: information, local: true, url: choose_new_or_edit) do |form| %>
+  <% if information.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(information.errors.count, "error") %> prohibited this information from being saved:</h2>
+
+      <ul>
+      <% information.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :information_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_field :content, id: :information_content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :destination %>
+    <%= form.text_area :destination, id: :information_destination %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,19 @@
+<h3>以下の内容で、送信する。</h3>
+
+<%= form_with(model: @information, url: informations_path, local: true) do |form| %>
+  <%= form.hidden_field :title %>
+  <%= form.hidden_field :content %>
+  <%= form.hidden_field :destination %>
+
+  <p>タイトル:<%= @information.title %></p>
+  <p>内容:<%= @information.content %></p>
+  <p>宛先:<%= @information.destination %></p>
+  <%= form.submit  "登録" %>
+<% end %>
+
+<%= form_with(model: @information, url: new_information_path, local: true, method: 'get') do |form| %>
+  <%= form.hidden_field :title %>
+  <%= form.hidden_field :content %>
+  <%= form.hidden_field :destination %>
+  <%= form.submit "もどる", name: 'back' %>
+<% end %>

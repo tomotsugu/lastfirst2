@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<h1>ユーザ情報</h1>
+        <p><%= @user.name %></p>
+        <p><%= @user.email %></p>
+        <p><%= @user.manager %></p>
+        <p><%= @user.prefecture %></p>
+        <p><%= @user.city %></p>
+        <p><%= @user.municipality %></p>
+        <p><%= @user.phone %></p>
+        <p><%= @user.role %></p>
+<br>
+<%= link_to 'New user', new_user_path,  class: 'btn btn-default' %>
