@@ -1,3 +1,12 @@
+<input type="button" value="ログイン" onClick="location.href='sessions/new'">
+
+<% if @informations.size != 0 %>
+  <h4><B>お知らせ</B></h4>
+  <% @informations.each do |information| %>
+    <p><%= information.content %></p>
+  <% end %>
+<% end %>
+
 <table>
   <thead>
     <tr>
@@ -18,3 +27,5 @@
         <td><%= link_to 'Show', post %></td>
     <% end %>
   </tbody>
+</table>
+<%= link_to 'お問合せ', new_contact_path %>

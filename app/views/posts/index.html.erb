@@ -1,6 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
+<h1>運用者画面</h1>
+<input type="button" value="マイページ" onClick="location.href='users'">
+<input type="button" value="投稿一覧" onClick="location.href='posts'">
+<input type="button" value="問合せ一覧" onClick="location.href='contacts'">
+
+<% if @informations.size != 0 %>
+  <h4><B>お知らせ</B></h4>
+  <% @informations.each do |information| %>
+    <p><%= information.content %></p>
+  <% end %>
+<% end %>
 
 <table>
   <thead>

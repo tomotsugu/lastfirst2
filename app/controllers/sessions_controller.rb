@@ -6,10 +6,12 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      if user.role = 1
-        redirect_to users_path
-      else  
-        redirect_to users_path
+      if user.role == "1"
+        redirect_to admintops_path
+      else
+        @user = User
+        @post = Post.where("user_id = user.id")
+        redirect_to posts_path
       end  
     else
       flash.now[:danger] = 'ログインに失敗しました'
