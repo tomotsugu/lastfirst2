@@ -21,6 +21,7 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'kaminari'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

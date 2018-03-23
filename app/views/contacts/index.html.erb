@@ -2,6 +2,10 @@
 
 <h1>Contacts</h1>
 
+<!-- 追加箇所開始 -->
+<%= page_entries_info @contacts %>
+<!-- 追加箇所終了 -->
+
 <table>
   <thead>
     <tr>
@@ -19,9 +23,12 @@
         <td><%= contact.email %></td>
         <td><%= contact.content %></td>
         <td><%= link_to 'Show', contact %></td>
-        <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
         <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<!-- 追加箇所開始 -->
+<%= paginate @contacts %>
+<!-- 追加箇所終了 -->

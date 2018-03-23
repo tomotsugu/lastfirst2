@@ -2,9 +2,10 @@ class ContactsController < ApplicationController
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
   before_action :check_login, only: [:index, :show]
 
-
+  PER = 5
   def index
-    @contacts = Contact.all
+    @contacts = Contact.page(params[:page]).per(PER)
+    #@contacts = Contact.all
   end
 
   def show
@@ -14,14 +15,12 @@ class ContactsController < ApplicationController
     if params[:back]
       @contact = Contact.new(contact_params)
     else
-      puts "++++++++++new"
       @contact = Contact.new
       @contact.user_id = 1
     end
   end
 
   def confirm
-    puts "++++++++++++++++contact_confirm"
     @contact = Contact.new(contact_params)
     #@contact.user_id = 1
     render :new if @contact.invalid?

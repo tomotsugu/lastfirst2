@@ -2,7 +2,6 @@ class RequestsController < ApplicationController
   before_action :set_request, only: [:show, :edit, :update, :destroy]
   before_action :check_login, only: [:index, :show]
 
-
   def index
       userid = current_user.id
       puts userid
