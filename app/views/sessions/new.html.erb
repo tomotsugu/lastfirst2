@@ -1,11 +1,25 @@
 <h1>Log in</h1>
-<%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+<%= form_with(scope: :session, url: sessions_path, local: true,class: "login") do |f| %>
 
+  <legend class="legend">Login</legend>
+
+  <div class="input">
   <%= f.label :email %>
   <%= f.email_field :email %>
+    <span><i class="fa fa-envelope-o"></i></span>
+  </div>
 
+  <div class="input">
   <%= f.label :password %>
   <%= f.password_field :password %>
+    <span><i class="fa fa-lock"></i></span>
+  </div>
+
   <br><br>
-  <%= f.submit "Log in" %>
+  <button type="submit" class="submit"><i class="fa fa-long-arrow-right"></i></button>
+
+  <div class="feedback">
+  	login successful <br />
+    redirecting...
+  </div>
 <% end %>

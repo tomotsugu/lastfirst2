@@ -22,7 +22,7 @@ h1{
     font-weight:bold;
     text-align:center;
     color:red;
-    background-color:#C3A7AB;
+/*    background-color:#C3A7AB; */
     margin: 80px;
 }
 
@@ -34,15 +34,15 @@ ul{
 }
 .navbar-header{
   color: #000000;
-  background-color:#99cc00;
+/*  background-color:#99cc00; */
 }
 .navbar-default{
   color: #000000;
-  background-color:#99cc00;
+/*  background-color:#99cc00; */
 }
 .navbar-collapse{
   color: #000000;
-  background-color:#99cc00;
+/*  background-color:#99cc00; */
 }
 
 header {
@@ -50,7 +50,7 @@ header {
   font-weight:bold;
   text-align:center;
   width: 100%;
-  background-color: #4f3e50;
+/*  background-color: #4f3e50; */
   position:fixed;
   top:0;
   left:0;
@@ -60,7 +60,7 @@ header {
 
 
 .menu{
-    background-color:#3A2F7B;
+/*    background-color:#3A2F7B; */
     color:#fff;
 }
 .menu li {
@@ -74,7 +74,7 @@ header {
   height:auto;
 }
 .contents li{
-    background-color:#F3A7AB;
+/*    background-color:#F3A7AB; */
     color:#fff;
 /*    padding:10% 10%;*/
     box-sizing: border-box;
@@ -147,15 +147,15 @@ ul{
 }
 .navbar-header{
   color: #000000;
-  background-color:#99cc00;
+/*  background-color:#99cc00; */
 }
 .navbar-collapse{
   color: #000000;
-  background-color:#99cc00;
+/*  background-color:#99cc00; */
 }
 
 .menu{
-    background-color:#3A2F7B;
+/*    background-color:#3A2F7B; */
     color:#fff;
 }
 .menu li {
@@ -234,13 +234,7 @@ background:#777777;
   height:20;
   padding-top: 55px;
 }
-table {
-  background-color: #bde9ba;
-}
 
-th {
-background-color: #ffd78c;
-}
 table, td {
 border: 2px #2b2b2b solid;
 color: #2b2b2b;
