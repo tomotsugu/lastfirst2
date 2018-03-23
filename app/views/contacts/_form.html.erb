@@ -1,4 +1,4 @@
-<%= form_with(model: contact, local: true, url: choose_new_or_edit) do |form| %>
+<%= form_with(model: contact, local: true, url: choose2_new_or_edit) do |form| %>
   <% if contact.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
@@ -25,6 +25,8 @@
     <%= form.label :content %>
     <%= form.text_area :content, id: :contact_content %>
   </div>
+
+  <%= form.hidden_field :user_id %>
 
   <div class="actions">
     <%= form.submit %>

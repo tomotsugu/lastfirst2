@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
-  before_action :check_login, only: [:index, :show, :new, :create]
+  before_action :check_login, only: [:index, :show]
 
 
   def index
@@ -14,18 +14,23 @@ class ContactsController < ApplicationController
     if params[:back]
       @contact = Contact.new(contact_params)
     else
+      puts "++++++++++new"
       @contact = Contact.new
+      @contact.user_id = 1
     end
-
   end
 
   def confirm
+    puts "++++++++++++++++contact_confirm"
     @contact = Contact.new(contact_params)
-    @contact.user_id = 1
+    #@contact.user_id = 1
     render :new if @contact.invalid?
   end
 
   def edit
+  end
+
+  def complete
   end
 
   def create
@@ -34,8 +39,10 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       if @contact.save
-        format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
-        format.json { render :show, status: :created, location: @contact }
+        format.html { redirect_to controller: 'contacts', action: 'complete' }
+        format.json { render :complete, status: :OK, location: @contact }
+        #format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
+        #format.json { render :show, status: :created, location: @contact }
       else
         format.html { render :new }
         format.json { render json: @contact.errors, status: :unprocessable_entity }
@@ -69,7 +76,7 @@ class ContactsController < ApplicationController
     end
 
     def contact_params
-      params.require(:contact).permit(:name, :email, :content)
+      params.require(:contact).permit(:name, :email, :content, :user_id)
     end
 
     def check_login

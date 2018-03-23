@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
-  validates :content, length: { in: 1..400 }
+  validates :content,  presence: true, length: { in: 1..400 }
+  validates :release,  presence: true, length: { in: 1..1 }
 
   belongs_to :user
     

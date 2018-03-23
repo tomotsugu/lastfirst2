@@ -3,8 +3,16 @@ class PostsController < ApplicationController
   before_action :check_login, only: [:index, :show, :new, :create]
 
   def index
-    @posts = Post.all
-    @informations = Information.all
+    @user = User.find(current_user.id)
+    if @user.role == '1'
+      @posts = Post.all
+    else
+      userid = current_user.id
+      # userが投稿したものだけ
+      @posts = Post.where("user_id IN (?)" , userid)
+    end
+    # user宛てのお知らせ・公開
+    @informations = Information.where("destination = '1' and release = '1'")
   end
 
   def show

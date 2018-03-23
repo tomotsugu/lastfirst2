@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>EMAIL</th>
       <th>Manager</th>
       <th>role</th>
       <th colspan="3"></th>
@@ -16,6 +17,7 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.name %></td>
+        <td><%= user.email %></td>
         <td><%= user.manager %></td>
         <td><%= user.role %></td>
         <td><%= link_to 'Show', user %></td>
@@ -25,6 +27,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-<%= link_to 'New user', new_user_path,  class: 'btn btn-default' %>

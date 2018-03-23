@@ -28,7 +28,12 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to users_path, notice: "ユーザ情報を更新しました！"
+      if @user.role == '1'
+        redirect_to users_path, notice: "ユーザ情報を更新しました！"
+      else
+        @post = Post.where("user_id = params[:id]")
+        redirect_to posts_path
+      end
     else
       render 'edit'
     end

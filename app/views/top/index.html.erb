@@ -24,7 +24,9 @@
 　　　  </td>
         <td><%= post.content %></td>
         <td><%= post.release %></td>
+        <td><%= post.user_id %></td>
         <td><%= link_to 'Show', post %></td>
+        <td><%= link_to '保健所へ問合せ', request_new_path(post.user_id) %></td>
     <% end %>
   </tbody>
 </table>

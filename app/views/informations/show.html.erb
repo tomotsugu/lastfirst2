@@ -15,5 +15,10 @@
   <%= @information.destination %>
 </p>
 
+<p>
+  <strong>release:</strong>
+  <%= @information.release %>
+</p>
+
 <%= link_to 'Edit', edit_information_path(@information) %> |
-<%= link_to 'Back', informations_path %>
+<%= link_to 'Back', informations_admin_path %>

@@ -4,10 +4,12 @@
   <%= form.hidden_field :title %>
   <%= form.hidden_field :content %>
   <%= form.hidden_field :destination %>
+  <%= form.hidden_field :release %>
 
   <p>タイトル:<%= @information.title %></p>
   <p>内容:<%= @information.content %></p>
   <p>宛先:<%= @information.destination %></p>
+  <p>release:<%= @information.release %></p>
   <%= form.submit  "登録" %>
 <% end %>
 
@@ -15,5 +17,6 @@
   <%= form.hidden_field :title %>
   <%= form.hidden_field :content %>
   <%= form.hidden_field :destination %>
+  <%= form.hidden_field :release %>
   <%= form.submit "もどる", name: 'back' %>
 <% end %>

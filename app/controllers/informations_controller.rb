@@ -1,9 +1,19 @@
 class InformationsController < ApplicationController
   before_action :set_information, only: [:show, :edit, :update, :destroy]
-  before_action :check_login, only: [:index, :show, :new, :create]
+  before_action :check_login, only: [:index, :index_admin , :show, :new, :create]
 
-  def index
+  def index_admin  #システム管理者
     @informations = Information.all
+    render :index
+  end
+
+  def index  #user
+    @informations = Information.where("destination = '1' and release = '1'")
+  end
+
+  def index_visitor #visitor
+    @informations = Information.where("destination = '2'")
+    render :index
   end
 
   def show
@@ -19,6 +29,7 @@ class InformationsController < ApplicationController
   end
 
   def confirm
+    puts "---------info_confirm"
     @information = Information.new(information_params)
     render :new if @information.invalid?
   end
@@ -66,7 +77,7 @@ class InformationsController < ApplicationController
     end
 
     def information_params
-      params.require(:information).permit(:title, :content, :destination)
+      params.require(:information).permit(:title, :content, :destination, :release)
     end
 
   def check_login

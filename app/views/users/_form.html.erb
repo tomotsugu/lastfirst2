@@ -11,6 +11,8 @@
     </div>
   <% end %>
 
+  <% if user.role == '1' %>
+
   <%= f.label :name %>
   <%= f.text_field :name %>
 
@@ -40,6 +42,15 @@
 
   <%= f.label :role %>
   <%= f.text_field :role %>
+
+  <% else %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+
+  <% end %>
 
   <div class="actions">
     <%= f.submit %>

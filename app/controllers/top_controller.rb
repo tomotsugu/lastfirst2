@@ -1,6 +1,6 @@
 class TopController < ApplicationController
   def index
-        @posts = Post.all
-        @informations = Information.all
+    @posts = Post.where("release = '1'")
+    @informations = Information.where("destination = '2' and release = '1'")
   end
 end

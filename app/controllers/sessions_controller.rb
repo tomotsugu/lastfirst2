@@ -7,9 +7,10 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
       if user.role == "1"
+        @user = user
         redirect_to admintops_path
       else
-        @user = User
+        @user = user
         @post = Post.where("user_id = user.id")
         redirect_to posts_path
       end  
@@ -22,7 +23,8 @@ class SessionsController < ApplicationController
   def destroy
     session.delete(:user_id)
     flash[:notice] = 'ログアウトしました'
-    redirect_to new_session_path
+    #redirect_to new_session_path
+    redirect_to root_path
   end
 
 end
