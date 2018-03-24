@@ -4,14 +4,19 @@
 .media {
     background: #FFF;
     padding: 10px;
-    overflow: hidden;
+    border: medium solid black;
+    overflow: hidden; 
+}
+.image_parent {
+    width: 600px;
+    margin: 0 auto;
 }
 .media__image {
     float: left;
     margin-right: 10px;
 }
 .media__summary {
-    overflow: hidden;
+   overflow: hidden;
 }
 .media__heading {
     font-size: 16px;

@@ -1,22 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<h1>運用者画面</h1>
-<%= link_to "パスワード変更", edit_user_path(current_user.id) %>
-<input type="button" value="投稿一覧" onClick="location.href='posts'">
-<%= link_to "問合せ一覧", requests_path(current_user.id) %>
+<% if @user.role == '2' %>
+  <%= link_to "パスワード変更", edit_user_path(current_user.id), class: 'btn btn-primary' %>
+  <P class="btn btn-primary">
+    <input type="button" value="投稿一覧" onClick="location.href='posts'">
+  </p>
+  <%= link_to "問合せ一覧", requests_path(current_user.id), class: 'btn btn-primary' %>
 
-<% if @informations.size != 0 %>
-  <h4><B>お知らせ</B></h4>
-  <% @informations.each do |information| %>
-    <p><%= information.content %></p>
+  <% if @informations.size != 0 %>
+    <h4><B>お知らせ</B></h4>
+    <% @informations.each do |information| %>
+      <ul class="list_info">
+        <li><%= information.content %></li>
+      </ul>
+    <% end %>
   <% end %>
+<% else %>
+  <input type="button" value="プロフィール一覧" onClick="location.href='users'">
+  <input type="button" value="投稿一覧" onClick="location.href='posts'">
+  <input type="button" value="問合せ一覧" onClick="location.href='contacts'">
+  <input type="button" value="お知らせ一覧" onClick="location.href='/informations'">
 <% end %>
 
 <%= link_to '新しい投稿', new_post_path, class: 'btn btn-primary' %>
 
-<div class="media">
-
-<table>
+<table class="media">
     <tr>
       <th>Image</th>
       <th>Content</th>
@@ -26,7 +34,7 @@
     <% @posts.each do |post| %>
       <tr>
     <div class="media__image">
-　　　  <td><%= image_tag post.image, :size =>'600x400' %></td>
+　　　  <td><%= image_tag post.image, :size =>'500x400' %></td>
     </div>
     <div class="media__summary">
         <td class="media__heading"><%= post.content %></td>
@@ -38,4 +46,3 @@
       </tr>
     <% end %>
 </table>
-</div>

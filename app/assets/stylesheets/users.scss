@@ -54,7 +54,6 @@ html, body{
     position: absolute;
   }
 }
-
 .input{
   position: relative;
   width: 90%;
@@ -63,7 +62,6 @@ html, body{
   span{
     position: absolute;
     display: block;
-    color: darken(#EDEDED, 10%);
     left: 10px;
     top: 8px;
     font-size: 20px;
@@ -73,19 +71,12 @@ html, body{
     width: 100%;
     padding: 10px 5px 10px 40px;
     display: block;
-    border: 1px solid #EDEDED;
-    border-radius: 4px;
-    transition: 0.2s ease-out;
-    color: darken(#EDEDED, 30%);
-    
+
     &:focus{
-      padding: 10px 5px 10px 10px;
-      outline: 0;
-      border-color: #FF7052;
+      padding: 10px 5px 10px 40px;
     }
   }
 }
-
 .submit{
   width: 45px;
   height: 45px;
@@ -106,6 +97,7 @@ html, body{
     outline: 0;
   }
 }
+
 
 .feedback{
   position: absolute;

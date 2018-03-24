@@ -1,29 +1,26 @@
+
+<%= render 'form', post: @post %>
+
 <% if @informations.size != 0 %>
   <h4><B>お知らせ</B></h4>
   <% @informations.each do |information| %>
-    <p><%= information.content %></p>
+  <ul class="list_info">
+    <li><%= information.content %></li>
+  </ul>
   <% end %>
 <% end %>
 
-<div class="media">
-
-<table>
+<table class="media">
   <div class="post-table">
     <% @posts.each do |post| %>
     <tr>
-      <div class="media__image">
-　　　  <td>
-　　　      <%= image_tag post.image, :size =>'600x400' %>
+　　　  <td class="media__image">
+　　　      <%= image_tag post.image, :size =>'500x400' %>
 　　　  </td>
-　　  </div>
-      <div class="media__summary">
-        <td class="media__heading"><%= post.content %></td>
-      </div>
+        <td class="media__heading"><p><%= post.content %></p></td>
         <td><%= post.user_id %></td>
         <td><%= link_to '保健所へ問合せ', request_new_path(post.user_id) %></td>
       </tr>
     <% end %>
   </div>
 </table>
-</div>
-<%= link_to 'お問合せ', new_contact_path %>

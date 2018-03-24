@@ -9,6 +9,12 @@
   </head>
 
   <body>
+    <div id="page">
+    <header>
+      <h1 id="siteTitle">里親サーチ</h1>
+      <p id="catchcopy">保健所で保護されている動物の里親を探す里親サーチサイトです。</p>
+    </header>
+
     <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
@@ -36,7 +42,10 @@
               </a>
             </li>
             <li class="nav-item nav-link">
-              <%= link_to "サイトについて", new_user_path %>
+              <%= link_to "サイトについて", aboutus_path %>
+            </li>
+            <li class="nav-item nav-link">
+              <%= link_to "プライバシー", policy_index_path %>
             </li>
             <li class="nav-item nav-link">
               <%= link_to "コンタクト", new_contact_path %>
@@ -59,7 +68,7 @@
     <p>運営会社DIVE INTO CODE株式会社</p>
     <p>© 2018 Copyright DIVE INTO CODE Corp.</p>
   </footer>
-
+  </div>
   </body>
 
 </html>

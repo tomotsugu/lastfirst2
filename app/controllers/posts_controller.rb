@@ -4,6 +4,8 @@ class PostsController < ApplicationController
 
   def index
     @user = User.find(current_user.id)
+    puts "+++++++++++++++++++++++"
+    puts @user.role
     if @user.role == '1'
       @posts = Post.all
     else

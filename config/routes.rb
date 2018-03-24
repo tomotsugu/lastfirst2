@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'sessions/new'
   root to: "top#index"
   resources :sessions, only: [:new, :create, :destroy]
+  resources :aboutus, only: [:index]
+  resources :policy, only: [:index]
   resources :admintops, only: [:index]
 
   resources :posts
