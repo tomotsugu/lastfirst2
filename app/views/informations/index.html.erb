@@ -2,7 +2,10 @@
 
 <h1>informations</h1>
 
-<table>
+<!-- レスポンシブ対応のために div を追加 -->
+<div class="table-responsive">
+  <!-- テーブルにクラスを追加 -->
+  <table class="table table-striped">
   <thead>
     <tr>
       <th>title</th>
@@ -22,12 +25,12 @@
         <td><%= information.release %></td>
         <td><%= link_to 'Show', information %></td>
         <td><%= link_to 'Edit', edit_information_path(information) %></td>
-        <td><%= link_to 'Destroy', information, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', information, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
-<%= link_to 'New information', new_information_path %>
+<%= link_to 'New information', new_information_path, class: 'btn btn-primary' %>

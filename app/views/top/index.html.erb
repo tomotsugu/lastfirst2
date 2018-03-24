@@ -1,5 +1,3 @@
-<input type="button" value="ログイン" onClick="location.href='sessions/new'">
-
 <% if @informations.size != 0 %>
   <h4><B>お知らせ</B></h4>
   <% @informations.each do |information| %>
@@ -7,28 +5,25 @@
   <% end %>
 <% end %>
 
+<div class="media">
+
 <table>
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Content</th>
-      <th>Release</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody class="post-table">
+  <div class="post-table">
     <% @posts.each do |post| %>
-　　　  <td class="post-img">
-　　　      <%= image_tag post.image, :size =>'200x300' %>
+    <tr>
+      <div class="media__image">
+　　　  <td>
+　　　      <%= image_tag post.image, :size =>'600x400' %>
 　　　  </td>
-        <td><%= post.content %></td>
-        <td><%= post.release %></td>
+　　  </div>
+      <div class="media__summary">
+        <td class="media__heading"><%= post.content %></td>
+      </div>
         <td><%= post.user_id %></td>
-        <td><%= link_to 'Show', post %></td>
         <td><%= link_to '保健所へ問合せ', request_new_path(post.user_id) %></td>
+      </tr>
     <% end %>
-  </tbody>
+  </div>
 </table>
-
+</div>
 <%= link_to 'お問合せ', new_contact_path %>

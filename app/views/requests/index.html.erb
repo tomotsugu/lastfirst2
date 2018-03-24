@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <h1>requests</h1>
-
-<table>
+<!-- レスポンシブ対応のために div を追加 -->
+<div class="table-responsive">
+  <!-- テーブルにクラスを追加 -->
+  <table class="table table-striped">
   <thead>
     <tr>
       <th>Name</th>
@@ -23,4 +25,4 @@
     <% end %>
   </tbody>
 </table>
-
+</div>
