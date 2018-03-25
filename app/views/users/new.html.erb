@@ -1,3 +1,8 @@
+<input type="button" value="プロフィール一覧" onClick="location.href='/users'">
+<input type="button" value="投稿一覧" onClick="location.href='/posts'">
+<input type="button" value="問合せ一覧" onClick="location.href='/contacts'">
+<input type="button" value="お知らせ一覧" onClick="location.href='/informations'">
+
 <h1>ユーザ登録</h1>
 
 <%= form_with(model: @user, local: true) do |f| %>  
@@ -32,5 +37,6 @@
   <%= f.text_field :role %>
   <br>
   <br>
-  <%= f.submit "Create my account" %>
+  <%= f.submit :class=>"square_btn" %>
+
 <% end %>

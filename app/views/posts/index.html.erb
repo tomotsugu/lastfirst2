@@ -1,11 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <% if @user.role == '2' %>
-  <%= link_to "パスワード変更", edit_user_path(current_user.id), class: 'btn btn-primary' %>
-  <P class="btn btn-primary">
-    <input type="button" value="投稿一覧" onClick="location.href='posts'">
-  </p>
-  <%= link_to "問合せ一覧", requests_path(current_user.id), class: 'btn btn-primary' %>
+  <%= link_to "パスワード変更", edit_user_path(current_user.id) %>
+  <%= link_to "投稿一覧", posts_path %>
+  <%= link_to "問合せ一覧", requests_path(current_user.id) %>
 
   <% if @informations.size != 0 %>
     <h4><B>お知らせ</B></h4>
@@ -15,6 +13,9 @@
       </ul>
     <% end %>
   <% end %>
+  <br>
+  <br>
+  <%= link_to '新しい投稿', new_post_path, class: 'square_btn' %>
 <% else %>
   <input type="button" value="プロフィール一覧" onClick="location.href='users'">
   <input type="button" value="投稿一覧" onClick="location.href='posts'">
@@ -22,9 +23,7 @@
   <input type="button" value="お知らせ一覧" onClick="location.href='/informations'">
 <% end %>
 
-<%= link_to '新しい投稿', new_post_path, class: 'btn btn-primary' %>
-
-<table class="media">
+<table>
     <tr>
       <th>Image</th>
       <th>Content</th>

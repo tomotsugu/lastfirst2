@@ -33,7 +33,7 @@ h1{
     text-align:center;
     color:red;
 /*    background-color:#C3A7AB; */
-    margin: 80px;
+    margin: 40px;
 }
 /*
 li{
@@ -278,4 +278,58 @@ table {
 
 .ippan {
   margin-bottom:10px;
+}
+
+.square_btn{
+    display: inline-block;
+    position: relative;
+    padding: 0.5em 1.4em;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: white;
+    border-bottom: solid 5px #36528c;/*ボタン色より暗めに*/
+    border-right: solid 5px #5375bd;/*ボタン色より暗めに*/
+    margin-left:10px;
+  
+}
+
+.square_btn:before{    
+    content: " ";
+    position: absolute;
+    bottom: -5px;
+    left: -1px;
+    width: 0;
+    height: 0;
+    border-width: 0 6px 6px 0px;
+    border-style: solid;
+    border-color: transparent;
+    border-bottom-color: #FFF;
+    color: white;
+}
+
+.square_btn:after{   
+    content: " ";
+    position: absolute;
+    top: -1px;
+    right: -5px;
+    width: 0;
+    height: 0;
+    border-width: 0px 6px 6px 0px;
+    border-style: solid;
+    border-color: #FFF;
+    border-bottom-color: transparent;
+    color: white;
+}
+
+.square_btn:active{ /*ボタンを押したとき*/
+    border:none;
+    -ms-transform: translate(6px,6px);
+    -webkit-transform: translate(6px,6px);
+    transform: translate(6px,6px);
+    color: white;
+}
+
+.square_btn:active:after,.square_btn:active:before {
+    content: none;/*ボタンを押すと線が消える*/
+    color: white;
 }

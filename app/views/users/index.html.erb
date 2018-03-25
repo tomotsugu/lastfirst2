@@ -1,15 +1,14 @@
-<h1>システム管理者画面</h1>
-
 <input type="button" value="プロフィール一覧" onClick="location.href='users'">
 <input type="button" value="投稿一覧" onClick="location.href='posts'">
 <input type="button" value="問合せ一覧" onClick="location.href='contacts'">
 <input type="button" value="お知らせ一覧" onClick="location.href='/informations'">
 
-<p id="notice"><%= notice %></p>
-
 <h1>ユーザ一覧</h1>
 
-<table>
+<%= link_to 'ユーザ登録', new_user_path, class: 'square_btn' %> 
+<br>
+<div class="table-responsive">
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Name</th>
@@ -34,4 +33,4 @@
     <% end %>
   </tbody>
 </table>
-
+</div>

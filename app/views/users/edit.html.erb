@@ -1,9 +1,13 @@
-<h1>運用者画面</h1>
-<%= link_to "パスワード変更", edit_user_path(current_user.id), class: 'btn btn-primary' %>
-<P class="btn btn-primary">
-<input type="button" value="投稿一覧" onClick="location.href='/posts'">
-</p>
-<%= link_to "問合せ一覧", requests_path(current_user.id), class: 'btn btn-primary' %>
+<% if @user.role == '1' %>
+  <input type="button" value="プロフィール一覧" onClick="location.href='users'">
+  <input type="button" value="投稿一覧" onClick="location.href='posts'">
+  <input type="button" value="問合せ一覧" onClick="location.href='contacts'">
+  <input type="button" value="お知らせ一覧" onClick="location.href='/informations'">
+<% else %>
+  <%= link_to "パスワード変更", edit_user_path(current_user.id) %>
+  <%= link_to "投稿一覧", posts_path %>
+  <%= link_to "問合せ一覧", requests_path(current_user.id) %>
+<% end %>
 
 <h1>ユーザ情報編集</h1>
 
