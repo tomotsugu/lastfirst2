@@ -20,7 +20,7 @@ body {
 #page{
   width: 980px;
   margin: 0 auto;
-  border: medium solid #ff00ff;
+/*  border: medium solid #ff00ff; */
 }
 #page:after{
   content: "";
@@ -59,12 +59,12 @@ p{
   font-size: 14px;
   list-style-type: square;
   margin-left:15px;
-  border: medium solid red;
+/*  border: medium solid red; */
 }
 .article{
   margin-bottom: 30px;
   padding-bottom: 15px;
-  border: medium solid blue;
+/*  border: medium solid blue; */
 }
 #siteTitle{
   font-size: 30px;
@@ -78,7 +78,7 @@ p{
 }
 
 header {
-  border: medium solid yellow;
+/*  border: medium solid yellow; */
   font-size:20px;
   font-weight:bold;
   text-align:center;
@@ -120,7 +120,7 @@ header {
     color:#fff;
 /*    padding:10% 10%;*/
     box-sizing: border-box;
-    border: solid 1px #fff;
+/*    border: solid 1px #fff; */
 }
 
 .container{
@@ -254,7 +254,7 @@ table, td {
 }
 table {
   background-color: white;
-  border: medium solid green;
+/*  border: medium solid green; */
 }
 .function-images {
   width: 100%;
