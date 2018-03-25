@@ -1,6 +1,14 @@
 
 <%= render 'form', post: @post %>
 
+<p id="intro">
+  <br>
+<br>
+<B>
+  <a href="#explain1">★当サイトにご興味のある方はこちら！！</a>
+</B>
+</p>
+
 <% if @informations.size != 0 %>
   <h4><B>お知らせ</B></h4>
   <% @informations.each do |information| %>
@@ -24,3 +32,14 @@
     <% end %>
   </div>
 </table>
+
+<a name="explain1"></a>
+<p>
+  <strong><B>ペットをご検討の方</B></strong>は、ご興味をもたれたペット画像ヨコの保健所へ問合せリンクよりご連絡下さい。
+  <br>
+  <strong><B>当サイトをご利用したい保健所の方</B></strong>は、上部コンタクトよりご連絡下さい。
+  <br>
+  <strong><B>試供品などご提供いただける業者の方</B></strong>は、上部コンタクトよりご連絡下さい。
+  <br>
+  <strong><B>当サイトへリンクをご希望のサイト様</B></strong>は、上部コンタクトよりご連絡下さい。
+</p>

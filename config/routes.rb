@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :aboutus, only: [:index]
   resources :policy, only: [:index]
+  resources :first, only: [:index]
   resources :admintops, only: [:index]
 
   resources :posts

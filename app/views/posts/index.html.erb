@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <% if @user.role == '2' %>
+  <%= link_to "はじめに読んだ下さい", first_index_path %>
   <%= link_to "パスワード変更", edit_user_path(current_user.id) %>
   <%= link_to "投稿一覧", posts_path %>
   <%= link_to "問合せ一覧", requests_path(current_user.id) %>
