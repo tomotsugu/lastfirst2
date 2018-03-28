@@ -27,6 +27,10 @@ body {
   clear: both;
   display: block;
 }
+.line_menu{
+  width:60px;
+  text-align: right
+}
 h1{
     font-size:30px;
     font-weight:bold;
@@ -253,6 +257,7 @@ background:#777777;
 table, td {
 }
 table {
+  width:980px;
   background-color: white;
 /*  border: medium solid green; */
 }

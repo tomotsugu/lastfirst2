@@ -33,15 +33,14 @@
     </tr>
     <% @posts.each do |post| %>
       <tr>
-    <div class="media__image">
-　　　  <td><%= image_tag post.image, :size =>'500x400' %></td>
-    </div>
-    <div class="media__summary">
-        <td class="media__heading"><%= post.content %></td>
-    </div>
-        <td><%= post.release %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+
+　　　  <td class="media__image">
+　　　      <%= image_tag post.image, :size =>'500x400' %>
+　　　  </td>
+        <td class="media__heading"><p><%= post.content %></p></td>
+        <td class='line_menu'><%= post.release %></td>
+        <td><%= link_to 'Show', post , class:'line_menu'  %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) ,  class:'line_menu'  %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'  %></td>
       </tr>
     <% end %>
