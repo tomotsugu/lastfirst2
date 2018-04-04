@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   end
 
   def new
+    @user_role = 1
     @user = User.new
   end
   
@@ -25,6 +26,7 @@ class UsersController < ApplicationController
   end
   
   def edit
+    @user_role = session[:user_role]
   end
   
   def update

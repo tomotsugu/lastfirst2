@@ -1,22 +1,26 @@
 <p>
-  <strong>Title:</strong>
+  <strong>お知らせ:</strong><br>
   <%= @information.title %>
 </p>
-
+<br>
 <p>
-  <strong>Content:</strong>
+  <strong>お知らせ詳細:</strong><br>
   <%= @information.content %>
 </p>
-
+<br>
 <p>
-  <strong>Destination:</strong>
-  <%= @information.destination %>
+  <strong>通知先:</strong><br>
+  <% if @information.destination == '1' %>各保健所
+  <% else %>VISITOR
+  <% end %>
 </p>
-
+<br>
 <p>
-  <strong>release:</strong>
-  <%= @information.release %>
+  <strong>公開/非公開:</strong><br>
+  <% if @information.release == 1 %>公開
+  <% else %>非公開
+  <% end %>
 </p>
-
-<%= link_to 'Edit', edit_information_path(@information) %> |
-<%= link_to 'Back', informations_admin_path %>
+<br>
+<%= link_to '編集', edit_information_path(@information) %> |
+<%= link_to '戻る', informations_admin_path %>

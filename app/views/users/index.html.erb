@@ -1,7 +1,7 @@
 <input type="button" value="プロフィール一覧" onClick="location.href='users'">
 <input type="button" value="投稿一覧" onClick="location.href='posts'">
 <input type="button" value="問合せ一覧" onClick="location.href='contacts'">
-<input type="button" value="お知らせ一覧" onClick="location.href='/informations'">
+<input type="button" value="お知らせ一覧" onClick="location.href='informations_admin'">
 
 <h1>ユーザ一覧</h1>
 
@@ -11,10 +11,10 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>EMAIL</th>
-      <th>Manager</th>
-      <th>role</th>
+      <th>施設名</th>
+      <th>メールアドレス</th>
+      <th>担当者</th>
+      <th>役割</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -25,10 +25,14 @@
         <td><%= user.name %></td>
         <td><%= user.email %></td>
         <td><%= user.manager %></td>
-        <td><%= user.role %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to "edit", edit_user_path(user.id), data: { confirm: '本当に編集していいですか？' } %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
+        <td>
+          <% if user.role == "1" %>管理
+          <% else %>施設
+          <% end %>
+        </td>
+        <td><%= link_to '詳細', user %></td>
+        <td><%= link_to "編集", edit_user_path(user.id), data: { confirm: '本当に編集していいですか？' } %></td>
+        <td><%= link_to '削除', user, method: :delete, data: { confirm: '本当に削除していいですか？' } , class: 'btn btn-danger btn-xs' %></td>
       </tr>
     <% end %>
   </tbody>

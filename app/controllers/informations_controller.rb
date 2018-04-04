@@ -3,15 +3,15 @@ class InformationsController < ApplicationController
   before_action :check_login, only: [:index, :index_admin , :show, :new, :create]
 
   def index_admin  #システム管理者
-    @informations = Information.all
+    @informations = Information.all.order("created_at DESC")
     render :index
   end
 
-  def index  #user
+  def index  #保健所用
     @informations = Information.where("destination = '1' and release = '1'")
   end
 
-  def index_visitor #visitor
+  def index_visitor #visitor用
     @informations = Information.where("destination = '2'")
     render :index
   end
@@ -29,7 +29,6 @@ class InformationsController < ApplicationController
   end
 
   def confirm
-    puts "---------info_confirm"
     @information = Information.new(information_params)
     render :new if @information.invalid?
   end

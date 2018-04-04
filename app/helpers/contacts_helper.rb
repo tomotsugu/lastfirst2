@@ -1,6 +1,5 @@
 module ContactsHelper
   def choose2_new_or_edit
-    puts "------------------choose2"
     if action_name == 'new' || action_name == 'confirm'
       confirm_contacts_path
     elsif action_name == 'edit'

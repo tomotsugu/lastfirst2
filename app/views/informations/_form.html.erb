@@ -8,30 +8,51 @@
         <li><%= message %></li>
       <% end %>
       </ul>
+
     </div>
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
+    <%= form.label :お知らせ　（50文字以内） %>
     <%= form.text_field :title, id: :information_title %>
   </div>
 
   <div class="field">
-    <%= form.label :content %>
-    <%= form.text_field :content, id: :information_content %>
+    <%= form.label :お知らせ詳細　（255文字以内） %>
+    <%= form.text_area :content, id: :information_content %>
   </div>
 
   <div class="field">
-    <%= form.label :destination %>
-    <%= form.text_area :destination, id: :information_destination %>
+    <%= form.label :通知先 %>
+    <%= form.text_field :destination, id: :information_destination %>
   </div>
   
-  <div class="field">
-    <%= form.label :release %>
-    <%= form.text_field :release, id: :information_release %>
-  </div>
+  <div class="form-group row">
+    <div class="col-sm-10 btn-group" data-toggle="buttons">
+      <% if information.release == 1 %>
+        <label class="btn btn-outline-secondary" style="width:10%">
+          <%= form.radio_button :release, 0, {} %> 非公開
+        </label>
+      <% else %>
+        <label class="btn btn-outline-secondary active" style="width:10%">
+          <%= form.radio_button :release, 0, {:checked => true} %> 非公開
+        </label>
+      <% end %>
 
+      <% if information.release == 1 %>
+        <label class="btn btn-outline-secondary active" style="width:10%">
+          <%= form.radio_button :release, 1, {:checked => true} %> 公開
+        </label>
+      <% else %>
+        <label class="btn btn-outline-secondary" style="width:10%">
+          <%= form.radio_button :release, 1, {} %> 公開
+        </label>
+      <% end %>
+    </div>
+  </div>  
+
+　<br>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "実　行" %>
   </div>
 <% end %>

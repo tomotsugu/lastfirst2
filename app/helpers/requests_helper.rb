@@ -1,6 +1,5 @@
 module RequestsHelper
   def choose1_new_or_edit
-    puts "------------------choose1"
     if action_name == 'new' || action_name == 'confirm'
       confirm_requests_path
     elsif action_name == 'edit'

@@ -6,11 +6,45 @@
 <p id="notice"><%= notice %></p>
 
 <h1>ユーザ情報</h1>
-        <p><%= @user.name %></p>
-        <p><%= @user.email %></p>
-        <p><%= @user.manager %></p>
-        <p><%= @user.prefecture %></p>
-        <p><%= @user.city %></p>
-        <p><%= @user.municipality %></p>
-        <p><%= @user.phone %></p>
-        <p><%= @user.role %></p>
+<p>
+  <strong>施設名:</strong>
+  <br>
+  <%= @user.name %>
+</p>
+ <br>
+<p>
+  <strong>メールアドレス:</strong>
+  <br>
+  <%= @user.email %>
+</p>
+<br>
+<p>
+  <strong>担当者:</strong>
+  <br>
+  <%= @user.manager %>
+</p>
+<br>
+<p>
+  <strong>住所:</strong>
+  <br>
+  <%= @user.prefecture %>
+  <%= @user.city %>
+  <%= @user.municipality %>
+</p>
+<br>
+<p>
+  <strong>電話番号:</strong>
+  <br>
+  <%= @user.phone %>
+</p>
+<p>
+  <strong>役割:</strong>
+  <br>
+  <% if @user.role == "1" %>管理
+  <% else %>施設
+  <% end %>
+</p>
+<br>
+
+<%= link_to '編集', edit_user_path(@user) %> |
+<%= link_to '戻る', users_path %>

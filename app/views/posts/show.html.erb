@@ -1,17 +1,21 @@
 <p>
-  <strong>Image:</strong>
-  <%= image_tag @post.image, :size =>'320x480' %>
+  <strong>画像:</strong>
+  <br>
+  <%= image_tag @post.image, :size =>'500x400' %>
 </p>
-
 <p>
-  <strong>Content:</strong>
+  <strong>コメント:</strong>
+  <br>
   <%= @post.content %>
 </p>
-
 <p>
-  <strong>Release:</strong>
-  <%= @post.release %>
+  <strong>公開/非公開:</strong>
+  <br>
+  <% if @post.release == "1" %>公開
+  <% else %>非公開
+  <% end %>
 </p>
+<br>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to '編集', edit_post_path(@post) %> |
+<%= link_to '戻る', posts_path %>

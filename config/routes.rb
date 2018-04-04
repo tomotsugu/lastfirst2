@@ -25,10 +25,11 @@ Rails.application.routes.draw do
       post :confirm
     end
   end
+  
   resources :users
 
-  get 'informations/admin', to: 'informations#index_admin'
-  get 'informations/visitor', to: 'informations#index_visitor'
+  get 'informations_admin', to: 'informations#index_admin'
+  get 'informations_visitor', to: 'informations#index_visitor'
   resources :informations do
     collection do
       post :confirm

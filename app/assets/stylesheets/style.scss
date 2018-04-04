@@ -35,7 +35,7 @@ h1{
     font-size:30px;
     font-weight:bold;
     text-align:center;
-    color:red;
+    color:#000;
 /*    background-color:#C3A7AB; */
     margin: 40px;
 }
@@ -64,6 +64,15 @@ p{
   list-style-type: square;
   margin-left:15px;
 /*  border: medium solid red; */
+}
+textarea {
+  width: 600px;
+  height: 108px;
+  border: 1px solid #bebebe;
+  font-size: 1em;
+}
+textarea:focus {
+  border: 1px solid #4881d9;
 }
 .article{
   margin-bottom: 30px;
@@ -274,13 +283,19 @@ table {
 }
 
 .field{
-  margin-left: 60px;
+  margin-left: 10px;
+}
+.field_area{
+  margin-left: 10px;
 }
 .sub{
-  margin-left: 60px;
+  margin-left: 10px;
   color: white;
 }
-
+.field_in{
+  width: 300px;
+  
+}
 .post-img {
    max-width: 50px;
    height: 50px;
@@ -345,4 +360,9 @@ table {
 .square_btn:active:after,.square_btn:active:before {
     content: none;/*ボタンを押すと線が消える*/
     color: white;
+}
+.hint{
+  font-size: 86%;
+  color: black;
+  font-style: italic;
 }

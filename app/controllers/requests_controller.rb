@@ -6,7 +6,7 @@ class RequestsController < ApplicationController
       userid = current_user.id
       puts userid
       # 自保健所あてのものだけ抽出
-      @requests = Request.where("user_id IN (?)" , userid)
+      @requests = Request.where("user_id IN (?)" , userid).order("created_at DESC")
   end
 
   def show

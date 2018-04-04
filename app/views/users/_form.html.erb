@@ -11,49 +11,50 @@
     </div>
   <% end %>
 
-  <% if user.role == '1' %>
-
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-
-  <%= f.label :manager %>
-  <%= f.text_field :manager %>
-
-  <%= f.label :prefecture %>
-  <%= f.text_field :prefecture %>
-
-  <%= f.label :city %>
-  <%= f.text_field :city %>
-
-  <%= f.label :municipality %>
-  <%= f.text_field :municipality %>
-
-  <%= f.label :phone %>
-  <%= f.text_field :phone %>
-
-  <%= f.label :role %>
-  <%= f.text_field :role %>
-
+  <div class="field_in">
+  <% if @user_role == '1' %>
+    施設名：<br>
+  <div class="field_in">
+    <%= f.text_field :name, :size=>"60" %>
+  </div>
+    <br><br>
+    メールアドレス：<br>
+    <%= f.email_field :email, :size=>"60" %>
+    <br><br>
+    パスワード：<br>
+    <%= f.password_field :password, :size=>"60" %>
+    <br><br>
+    パスワード確認：<br>
+    <%= f.password_field :password_confirmation, :size=>"60" %>
+    <br><br>
+    担当者：<br>
+    <%= f.text_field :manager, :size=>"60" %>
+    <br><br>
+    住所（都道府県）：<br>
+    <%= f.text_field :prefecture, :size=>"60" %>
+    <br><br>
+    　　（市町村）：<br>
+    <%= f.text_field :city, :size=>"60" %>
+    <br><br>
+    　　（町名以下）：<br>
+    <%= f.text_field :municipality, :size=>"60" %>
+    <br><br>
+    電話番号：<br>
+    <%= f.text_field :phone %>
+    <br><br>
+    ロール：<br>
+    <%= f.text_field :role %>
   <% else %>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-
+    パスワード：<br>
+    <%= f.password_field :password, :size=>"60" %>
+    <br><br>
+    パスワード確認：<br>
+    <%= f.password_field :password_confirmation, :size=>"60" %>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
+  </div>
+    <br>
+  <div>
+    <%= f.submit "更新" %>
   </div>
 <% end %>
 

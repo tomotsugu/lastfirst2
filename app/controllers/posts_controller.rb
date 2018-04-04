@@ -4,17 +4,15 @@ class PostsController < ApplicationController
 
   def index
     @user = User.find(current_user.id)
-    puts "+++++++++++++++++++++++"
-    puts @user.role
     if @user.role == '1'
-      @posts = Post.all
+      @posts = Post.all.order("created_at DESC")
     else
       userid = current_user.id
       # userが投稿したものだけ
-      @posts = Post.where("user_id IN (?)" , userid)
+      @posts = Post.where("user_id IN (?)" , userid).order("created_at DESC")
     end
     # user宛てのお知らせ・公開
-    @informations = Information.where("destination = '1' and release = '1'")
+    @informations = Information.where("destination = '1' and release = '1'").order("created_at DESC")
   end
 
   def show

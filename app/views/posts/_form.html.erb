@@ -12,22 +12,41 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :image %>
+    <%= form.label :image, "画像" %>
     <%= form.file_field :image, id: :feed_image %>
     <%= form.hidden_field :image_cache %>
   </div>
 
   <div class="field">
-    <%= form.label :content %>
+    <%= form.label :content, "コメント" %>
     <%= form.text_area :content, id: :post_content %>
   </div>
 
-  <div class="field">
-    <%= form.label :release %>
-    <%= form.text_field :release, id: :post_release %>
-  </div>
+  <div class="form-group row">
+    <div class="col-sm-10 btn-group" data-toggle="buttons">
+      <% if post.release == "1" %>
+        <label class="btn btn-outline-secondary" style="width:10%">
+          <%= form.radio_button :release, 0, {} %> 非公開
+        </label>
+      <% else %>
+        <label class="btn btn-outline-secondary active" style="width:10%">
+          <%= form.radio_button :release, 0, {:checked => true} %> 非公開
+        </label>
+      <% end %>
 
-  <div class="actions">
-    <%= form.submit %>
+      <% if post.release == "1" %>
+        <label class="btn btn-outline-secondary active" style="width:10%">
+          <%= form.radio_button :release, 1, {:checked => true} %> 公開
+        </label>
+      <% else %>
+        <label class="btn btn-outline-secondary" style="width:10%">
+          <%= form.radio_button :release, 1, {} %> 公開
+        </label>
+      <% end %>
+    </div>
+  </div>  
+
+  <div>
+    <%= form.submit "投 稿" %>
   </div>
 <% end %>
