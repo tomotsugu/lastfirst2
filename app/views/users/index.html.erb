@@ -15,6 +15,7 @@
       <th>メールアドレス</th>
       <th>担当者</th>
       <th>役割</th>
+      <th>ロック</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -28,6 +29,10 @@
         <td>
           <% if user.role == "1" %>管理
           <% else %>施設
+          <% end %>
+        </td>
+        <td>
+          <% if user.lockable == "1" %>ロック中
           <% end %>
         </td>
         <td><%= link_to '詳細', user %></td>

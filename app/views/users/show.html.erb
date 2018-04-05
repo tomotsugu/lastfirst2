@@ -44,6 +44,13 @@
   <% else %>施設
   <% end %>
 </p>
+<p>
+  <strong>状態:</strong>
+  <br>
+  <% if @user.lockable == "1" %>ロック中
+  <% end %>
+</p>
+
 <br>
 
 <%= link_to '編集', edit_user_path(@user) %> |

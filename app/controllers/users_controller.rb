@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      if @user.role == '1'
+      if session[:user_role] == "1"
         redirect_to users_path, notice: "ユーザ情報を更新しました！"
       else
         @post = Post.where("user_id = params[:id]")
@@ -60,7 +60,7 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :password,
                                  :password_confirmation, :manager,
                                  :prefecture, :city, :municipality,
-                                 :phone, :role)
+                                 :phone, :role, :lockable)
   end
   def check_login
     if !logged_in? 
