@@ -45,8 +45,8 @@
     ロール：<br>
     <%= f.text_field :role %>
     <br><br>
-    ロック(1:ロック)：<br>
-    <%= f.text_field :lockable %>
+    <%= f.check_box(:lockable) %>ロックする
+    
   <% else %>
     パスワード：<br>
     <%= f.password_field :password, :size=>"60" %>

@@ -5,18 +5,23 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
-      session[:user_id] = user.id
-      session[:user_role] = user.role
-      if user.role == "1"
-        @user = user
-        redirect_to admintops_path
+      if  user.lockable  ==  "1"
+        flash.now[:danger] = 'アカウントはロックされています'
+        render 'new'
       else
-        @user = user
-        @post = Post.where("user_id = user.id")
-        redirect_to posts_path
+        session[:user_id] = user.id
+        session[:user_role] = user.role
+        if user.role == "1"
+          @user = user
+          redirect_to admintops_path
+        else
+          @user = user
+          @post = Post.where("user_id = user.id")
+          redirect_to posts_path
+        end  
       end  
     else
-      flash.now[:danger] = 'ログインに失敗しました'
+      flash.now[:danger] = 'メールアドレスかパスワードに誤りがあります'
       render 'new'
     end
   end
