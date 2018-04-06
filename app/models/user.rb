@@ -3,9 +3,10 @@ class User < ApplicationRecord
   validates :manager,  presence: true, length: { maximum: 30 }
   validates :email, presence: true, uniqueness: true, length: { maximum: 255 },
     format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
-    
+
   has_secure_password
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6 }, on: :create
+  validates :password, length: {minimum: 6}, on: :update, allow_blank: true
 
   before_save { email.downcase! }
   validates :prefecture,  presence: true, length: { maximum: 14 }

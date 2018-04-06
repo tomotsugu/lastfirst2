@@ -15,6 +15,7 @@
   <table class="table table-striped">
     <thead>
       <tr>
+        <th>ステータス</th>
         <th>問合せ日</th>
         <th>名前</th>
         <th>メールアドレス</th>
@@ -25,9 +26,11 @@
     <tbody>
       <% @contacts.each do |contact| %>
         <tr>
+          <td><%= contact.status %></td>
           <td><%= contact.created_at.strftime('%Y/%m/%d %H:%M') %></td>
           <td><%= contact.name %></td>
           <td><%= contact.email %></td>
+          <td><%= link_to 'ステータス変更', edit_contact_path(contact)  %></td>
           <td><%= link_to '詳細', contact %></td>
           <td><%= link_to '削除', contact, method: :delete, data: { confirm: 'Are you sure?'  }, class: 'btn btn-danger btn-xs' %></td>
         </tr>

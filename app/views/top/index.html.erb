@@ -26,7 +26,8 @@
 　　　      <%= image_tag post.image, :size =>'500x400' %>
 　　　  </td>
         <td class="media__heading"><p><%= post.content %></p></td>
-        <td><%= post.user_id %></td>
+        
+        <td><%= post.user.prefecture%></td>
         <td><%= link_to '保健所へ問合せ', request_new_path(post.user_id) %></td>
       </tr>
     <% end %>
@@ -43,3 +44,6 @@
   <br>
   <strong><B>当サイトへリンクをご希望のサイト様</B></strong>は、上部コンタクトよりご連絡下さい。
 </p>
+
+<p id="pageTop"><a href="#"><i class="fa fa-chevron-up">top</i></a></p>
+

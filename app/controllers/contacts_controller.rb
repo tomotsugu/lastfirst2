@@ -17,6 +17,7 @@ class ContactsController < ApplicationController
     else
       @contact = Contact.new
       @contact.user_id = 1
+      @contact.status = "未読"
     end
   end
 
@@ -75,7 +76,7 @@ class ContactsController < ApplicationController
     end
 
     def contact_params
-      params.require(:contact).permit(:name, :email, :content, :user_id)
+      params.require(:contact).permit(:name, :email, :content, :user_id, :status)
     end
 
     def check_login

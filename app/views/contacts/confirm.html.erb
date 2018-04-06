@@ -1,11 +1,13 @@
 <h3>以下の内容で、送信する。</h3>
 
 <%= form_with(model: @contact, url: contacts_path, local: true) do |form| %>
+  <%= form.hidden_field :status %>
   <%= form.hidden_field :name %>
   <%= form.hidden_field :email %>
   <%= form.hidden_field :content %>
   <%= form.hidden_field :user_id %>
 
+  <p>ステータス:<%= @contact.status %></p>
   <p>お名前:<%= @contact.name %></p>
   <p>メールアドレス:<%= @contact.email %></p>
   <p>お問合せ内容:<%= @contact.content %></p>
@@ -13,6 +15,7 @@
 <% end %>
 
 <%= form_with(model: @contact, url: new_contact_path, local: true, method: 'get') do |form| %>
+  <%= form.hidden_field :status %>
   <%= form.hidden_field :name %>
   <%= form.hidden_field :email %>
   <%= form.hidden_field :content %>
