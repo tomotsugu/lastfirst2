@@ -11,6 +11,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
+
   /* フッタと同じ高さに設定 */
 /*  margin-bottom: 60px; */
 
@@ -213,24 +214,6 @@ header ul:after {
   clear: both;
 }
 
-footer {
-  border-top: solid 1px #CCCCCC;
-  margin-top: 15px;
-/*  margin-top: 30px; */
-
-  padding-bottom: 10px;
-  font-size: 12px;
-
-/*  position: fixed; */
-  bottom: 0;
-  margin-bottom: 0;
-  padding-bottom: 15px;
-  width: 100%;
-  /* フッタの高さ */
-  height: 60px;
-/*  background: #fff; */
-  color: #000;
-}
 /*
 a.subbuttom{
 font-size:0.75em;
@@ -267,7 +250,7 @@ table, td {
 }
 table {
   width:980px;
-  background-color: white;
+/*  background-color: white; */
 /*  border: medium solid green; */
 }
 .function-images {
@@ -365,4 +348,23 @@ table {
   font-size: 86%;
   color: black;
   font-style: italic;
+}
+
+footer {
+  border-top: solid 1px #CCCCCC;
+  margin-top: 15px;
+/*  margin-top: 30px; */
+
+  padding-bottom: 10px;
+  font-size: 12px;
+
+/*  position: fixed; */
+  bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 15px;
+  width: 100%;
+  /* フッタの高さ */
+  height: 60px;
+/*  background: #fff; */
+  color: #000;
 }

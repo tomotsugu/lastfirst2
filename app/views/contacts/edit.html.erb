@@ -1,6 +1,39 @@
-<h1>Editing Contact</h1>
+<h1>ステータス変更 Contact</h1>
 
-<%= render 'form', contact: @contact %>
+<%= form_with(model: @contact, local: true) do |form| %>
+  <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
 
-<%= link_to 'Show', @contact %> |
-<%= link_to 'Back', contacts_path %>
+      <ul>
+      <% @contact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <strong>ステータス:</strong>
+   <%= @contact.status %>
+  </p>
+
+  <p>
+    <strong>お名前:</strong>
+    <%= @contact.name %>
+  </p>
+ 
+  <p>
+    <strong>メールアドレス:</strong>
+    <%= @contact.email %>
+  </p>
+
+  <p>
+    <strong>お問合せ内容:</strong>
+    <%= @contact.content %>
+  </p>
+
+  <%= form.submit :class=>"square_btn" %>
+<% end %>
+
+<%= link_to '戻る', contacts_path %>
