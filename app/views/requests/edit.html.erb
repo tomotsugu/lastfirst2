@@ -1,6 +1,39 @@
-<h1>Editing request</h1>
+<h1>ステータス変更</h1>
 
-<%= render 'form', request: @request %>
+<%= form_with(model: @request, local: true) do |form| %>
+  <% if @request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@request.errors.count, "error") %> prohibited this request from being saved:</h2>
 
-<%= link_to 'Show', @request %> |
-<%= link_to 'Back', requests_path %>
+      <ul>
+      <% @request.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <strong>ステータス:</strong>
+    <%= form.select(:status, [['未読', '未読'], ['対応中', '対応中'], ['完了', '完了']]) %>
+  </p>
+
+  <p>
+    <strong>お名前:</strong>
+    <%= @request.name %>
+  </p>
+ 
+  <p>
+    <strong>メールアドレス:</strong>
+    <%= @request.email %>
+  </p>
+
+  <p>
+    <strong>お問合せ内容:</strong>
+    <%= @request.content %>
+  </p>
+
+  <%= form.submit :class=>"square_btn" %>
+<% end %>
+
+<%= link_to '戻る', requests_path %>

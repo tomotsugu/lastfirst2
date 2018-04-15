@@ -17,7 +17,7 @@ class ContactsController < ApplicationController
     else
       @contact = Contact.new
       @contact.user_id = 1
-      @contact.status = "未読"
+      @contact.status = "未読" 
     end
   end
 

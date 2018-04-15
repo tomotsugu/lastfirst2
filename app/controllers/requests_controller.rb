@@ -18,6 +18,8 @@ class RequestsController < ApplicationController
     else
       @request = Request.new
       @request.user_id = params[:id]
+      @request.status = "未読" 
+
     end
   end
 
@@ -74,7 +76,7 @@ class RequestsController < ApplicationController
     end
 
     def request_params
-      params.require(:request).permit(:name, :email, :content, :user_id)
+      params.require(:request).permit(:name, :email, :content, :user_id, :status)
     end
 
     def check_login

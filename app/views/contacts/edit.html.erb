@@ -15,7 +15,7 @@
 
   <p>
     <strong>ステータス:</strong>
-   <%= @contact.status %>
+    <%= form.select(:status, [['未読', '未読'], ['対応中', '対応中'], ['完了', '完了']]) %>
   </p>
 
   <p>

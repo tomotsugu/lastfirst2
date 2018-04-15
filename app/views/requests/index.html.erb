@@ -10,6 +10,7 @@
   <table class="table table-striped">
   <thead>
     <tr>
+      <th>ステータス</th>
       <th>問合日</th>
       <th>名前</th>
       <th>メールアドレス</th>
@@ -20,9 +21,11 @@
   <tbody>
     <% @requests.each do |request| %>
       <tr>
+        <td><%= request.status %></td>
         <td><%= request.created_at.strftime('%Y/%m/%d %H:%M') %></td>
         <td><%= request.name %></td>
         <td><%= request.email %></td>
+        <td><%= link_to 'ステータス変更', edit_request_path(request)  %></td>
         <td><%= link_to '詳細', request %></td>
       </tr>
     <% end %>

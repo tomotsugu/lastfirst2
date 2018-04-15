@@ -6,43 +6,43 @@
 					<li>
 						<a href="http://www.flickr.com/photos/strupler/2969141180" target="_blank"><img src="/assets/1.jpg" alt="image1"/></a>
 						<div class="sb-description">
-							<h3>Creative Lifesaver</h3>
+							<h3>お宅のペットを紹介しませんか？</h3>
 						</div>
 					</li>
 					<li>
 						<a href="http://www.flickr.com/photos/strupler/2968268187" target="_blank"><img src="/assets/2.jpg" alt="image2"/></a>
 						<div class="sb-description">
-							<h3>Honest Entertainer</h3>
+							<h3>次回アンケート予定は５月下旬頃になります</h3>
 						</div>
 					</li>
 					<li>
 						<a href="http://www.flickr.com/photos/strupler/2968114825" target="_blank"><img src="/assets/3.jpg" alt="image3"/></a>
 						<div class="sb-description">
-							<h3>Brave Astronaut</h3>
+							<h3><h3>
 						</div>
 					</li>
 					<li>
 						<a href="http://www.flickr.com/photos/strupler/2968122059" target="_blank"><img src="/assets/4.jpg" alt="image4"/></a>
 						<div class="sb-description">
-							<h3>Affectionate Decision Maker</h3>
+							<h3></h3>
 						</div>
 					</li>
 					<li>
 						<a href="http://www.flickr.com/photos/strupler/2969119944" target="_blank"><img src="/assets/5.jpg" alt="image5"/></a>
 						<div class="sb-description">
-							<h3>Faithful Investor</h3>
+							<h3></h3>
 						</div>
 					</li>
 					<li>
 						<a href="http://www.flickr.com/photos/strupler/2968126177" target="_blank"><img src="/assets/6.jpg" alt="image6"/></a>
 						<div class="sb-description">
-							<h3>Groundbreaking Artist</h3>
+							<h3></h3>
 						</div>
 					</li>
 					<li>
 						<a href="http://www.flickr.com/photos/strupler/2968945158" target="_blank"><img src="/assets/7.jpg" alt="image7"/></a>
 						<div class="sb-description">
-							<h3>Selfless Philantropist</h3>
+							<h3></h3>
 						</div>
 					</li>
 				</ul>
@@ -168,6 +168,10 @@
   <% end %>
 <% end %>
 
+<br>
+<br>
+<h3><strong><B>ペットをご検討の方</B></strong>は、ご興味をもたれたペット画像ヨコの保健所へ問合せリンクよりご連絡下さい</h3>
+
 <table class="media">
   <div class="post-table">
     <% @posts.each do |post| %>
@@ -186,13 +190,11 @@
 
 <a name="explain1"></a>
 <p>
-  <strong><B>ペットをご検討の方</B></strong>は、ご興味をもたれたペット画像ヨコの保健所へ問合せリンクよりご連絡下さい。
+  <strong><B>当サイトをご利用したい保健所の方</B></strong>は、 <u><%= link_to "こちら", new_contact_path %></u>よりご連絡下さい。
   <br>
-  <strong><B>当サイトをご利用したい保健所の方</B></strong>は、上部コンタクトよりご連絡下さい。
+  <strong><B>試供品などご提供いただける業者の方</B></strong>は、<u><%= link_to "こちら", new_contact_path %></u>よりご連絡下さい。
   <br>
-  <strong><B>試供品などご提供いただける業者の方</B></strong>は、上部コンタクトよりご連絡下さい。
-  <br>
-  <strong><B>当サイトへリンクをご希望のサイト様</B></strong>は、上部コンタクトよりご連絡下さい。
+  <strong><B>当サイトへリンクをご希望のサイト様</B></strong>は、<u><%= link_to "こちら", new_contact_path %></u>よりご連絡下さい。
 </p>
 
 <p id="pageTop"><a href="#"><i class="fa fa-chevron-up">top</i></a></p>
